@@ -3,9 +3,15 @@ var app = {
 	nytData : [],
 
 	initialize: function() {
-		app.getNYTimesData();
-		$('#keyword').keypress(function() {
-			app.getKeyword(this);
+		$('#search').click(function() {
+			var newSearchTerm = $("#keyword").val();
+			app.getNYTimesData(newSearchTerm);
+		});
+
+		$("#keyword").keypress(function(e){
+			if (e.which == 13){
+				$("#search").trigger('click');
+			}
 		});
 	},
 
@@ -21,14 +27,8 @@ var app = {
 		$('.container').html(theHTML);
 	},
 
-	getKeyword: function(that) {
-		const keyword = $(that).val();
-		app.getNYTimesData(keyword);
-	},
-
 	getNYTimesData: function(kw) {
 		console.log("Get NY Times Data");
-		// var currentSearchWord = 'apple';
 		var nyTimesURL = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + kw + '&page=0&sort=newest&api-key=';
 		var myNYKey = 'M0Oi5ASy0G1tPpm886HUwJETU4mTLhn9';
 		var nyTimesReqURL = nyTimesURL + myNYKey;
@@ -42,7 +42,7 @@ var app = {
 				console.log(err);
 			},
 			success: function(data){
-				//console.log(data);
+				console.log(data);
 				app.nyTimesArticles = data.response.docs;
 				console.log(app.nyTimesArticles);
 				app.makeHTML();
