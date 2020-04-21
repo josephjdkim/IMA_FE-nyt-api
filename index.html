@@ -9,13 +9,15 @@
   </head>
   <body>
     <div class="wrap">
-      <h2>Search through NYT's catalogue of articles:</h2>
-      <input type="text" id="keyword" name="keyword" required minlength="2" size="20" onchange="getKeyword()">
-      <button class="aButton" id="search">ENTER</button>
-      <div class="container"></div>
+      <div id="query">
+        <h2>Search through NYT's catalogue of articles:</h2>
+        <input type="text" id="keyword" name="keyword" required minlength="2" size="20" onchange="getKeyword()">
+        <button class="aButton" id="search">ENTER</button>
+      </div>
+      <h2 id="browse">Browse and click through relevant articles:</h2>
+      <div class="container">
+      </div>
     </div>
-
-
 
     <!-- If using jQuery, it must be added BEFORE your own script -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

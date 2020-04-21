@@ -8,7 +8,16 @@ a {
   font-size: 20px;
 }
 
+#query {
+  margin: 40px 100px 24px;
+}
+
+#browse {
+ margin: 100px 100px 24px;
+}
+
 .container {
+  margin: 12px auto;
   width: 100%;
   display: flex;
   flex-direction: row;
