@@ -1,0 +1,25 @@
+* {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.nytArticle {
+  margin: 12px auto;
+  width: 400px;
+  height: 120px;
+  border-style: solid;
+  padding: 20px;
+}
